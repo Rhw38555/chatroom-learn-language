@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Chat Room Detail</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+  <script th:src="@{/js/chat.js}"></script>
+</head>
+<body>
+<h1 id="h1Title" th:if="${room}" th:text="${'[' + room.language + ' ' + room.level + '] ' + room.scenarioKor}"></h1>
+<h1 th:unless="${room}">Room Not Found</h1>
+
+<div id="messages" th:if="${room}">
+  <ul>
+    <li th:each="message : ${messages.chatMessageList}">
+      <div class="" th:classappend="${message.sender} == 'gpt' ? 'message-wrapper-gpt' : 'message-wrapper'">
+        <div class="user-chat" th:classappend="${message.sender} == 'gpt' ? '' : 'me'" th:text="${message.message}"></div>
+        <button class="tts-button" onclick="speakOnText(this)">Read aloud</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div id="loadingOverlay"></div>
+<img id="loadingImg" th:src="@{/image/Fading_balls.gif}" alt="Loading..." style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); margin-left: 10px;">
+<div style="display: flex;">
+  <input type="text" id="messageInput" style="border: 1px solid gold; width: 85%; height:45px;">
+  <button onclick="recommendMsg()" style="border: 1px solid gold; width: 15%; height:45px;">Get Featured</button>
+</div>
+<div>
+  <button onclick="sendMessage()">Send</button>
+  <button id="micButton">Start voice input</button>
+  <button type="button" onclick="location.href='/list'">Chat List</button>
+</div>
+
+
+<script>
+
+</script>
+
+</body>
+</html>

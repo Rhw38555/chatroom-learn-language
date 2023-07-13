@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Create</h1>
+
+  <form id="createForm">
+    <div>
+      <label for="language">대화언어:</label>
+      <select id="language" name="language">
+        <option th:each="option : ${languageOptions}"
+                th:value="${option}"
+                th:text="${option}"></option>
+      </select>
+    </div>
+    <div>
+      <label for="level">레벨:</label>
+      <select id="level" type="text" name="level">
+        <option th:each="option : ${levelOptions}"
+                th:value="${option}"
+                th:text="${option}"></option>
+      </select>
+    </div>
+    <div>
+      <label for="scenario">상황 (한국어):</label>
+      <input type="text" id="scenario" name="scenario">
+    </div>
+    <div>
+      <label for="scenarioEN">상황 (영어):</label>
+      <input type="text" id="scenarioEN" name="scenarioEN" placeholder="한국어 입력 값이 자동으로 번역됩니다">
+    </div>
+    <div>
+      <label for="myRole">내 역할 (한국어):</label>
+      <input type="text" id="myRole" name="myRole">
+    </div>
+    <div>
+      <label for="myRoleEN">내 역할 (영어):</label>
+      <input type="text" id="myRoleEN" name="myRoleEN" placeholder="한국어 입력 값이 자동으로 번역됩니다">
+    </div>
+    <div>
+      <label for="gptRole">GPT 역할 (한국어):</label>
+      <input type="text" id="gptRole" name="gptRole">
+    </div>
+    <div>
+      <label for="gptRoleEN">GPT 역할 (영어):</label>
+      <input type="text" id="gptRoleEN" name="gptRoleEN" placeholder="한국어 입력 값이 자동으로 번역됩니다">
+    </div>
+    <input type="submit" value="Create">
+  </form>
+</div>
+<script src="/js/create.js"></script>
+</body>
+</html>

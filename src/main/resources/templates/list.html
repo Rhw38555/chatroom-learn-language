@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="/js/list.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>Chat List  <a href="/createPage" class="create-button">Create Chat Room</a></h1>
+  <table>
+    <thead>
+    <tr>
+      <th>Language</th>
+      <th>Level</th>
+      <th>Scenario</th>
+      <th>My Role</th>
+      <th>GPT Role</th>
+    </tr>
+    </thead>
+    <tbody id="chatListBody" th:each="chat : ${chatList.chatRoomList}">
+    <tr>
+      <td th:text="${chat.language}"></td>
+      <td th:text="${chat.level}"></td>
+      <td>
+        <a th:href="@{/chat/{id}(id=${chat.id})}" th:text="${chat.scenarioKor}"></a>
+      </td>
+      <td th:text="${chat.myRoleKor}"></td>
+      <td th:text="${chat.gptRoleKor}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -17,7 +17,5 @@ chat gpt를 이용하여 언어 상황극 채팅을 진행하여 언어를 배�
 
 ### 화면 
 
-![채팅방](https://github.com/Rhw38555/chat-learn-language/assets/32809047/1e60960a-e9f1-48e4-bb51-5d9ab1b311af)
-![채팅 상세](https://github.com/Rhw38555/chat-learn-language/assets/32809047/bf4d016a-0bcb-418c-a0cb-dfa0cf6032e4)
-
-
+![채팅방](https://github.com/Rhw38555/chatroom-learn-language/assets/32809047/d04a204c-9878-4087-ad51-91ee774a5dcb)
+![채팅상세](https://github.com/Rhw38555/chatroom-learn-language/assets/32809047/b4f95e8a-125e-4af1-8905-6d9db4784461)
